@@ -1,20 +1,16 @@
 import os
+import sys
+import threading
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
-import threading
+
 try:
     from PIL import Image, ImageOps, UnidentifiedImageError
 except ImportError:
-    import sys
-    import tkinter as tk
-    from tkinter import messagebox
     root = tk.Tk()
     root.withdraw()
     messagebox.showerror("Missing Dependency", "The 'Pillow' library is required.\nPlease install it using: pip install Pillow")
     sys.exit(1)
-
-import sys
-
 # Increase the limit for large images to avoid DecompressionBombError
 Image.MAX_IMAGE_PIXELS = None
 
