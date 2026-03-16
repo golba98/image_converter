@@ -11,8 +11,8 @@ except ImportError:
     root.withdraw()
     messagebox.showerror("Missing Dependency", "The 'Pillow' library is required.\nPlease install it using: pip install Pillow")
     sys.exit(1)
-# Increase the limit for large images to avoid DecompressionBombError
-Image.MAX_IMAGE_PIXELS = None
+# Do not disable MAX_IMAGE_PIXELS to avoid DecompressionBombError vulnerabilities
+# Image.MAX_IMAGE_PIXELS = None
 
 # Compatibility for older Pillow versions
 try:
